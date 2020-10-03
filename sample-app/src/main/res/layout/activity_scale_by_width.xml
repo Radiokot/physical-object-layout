@@ -7,7 +7,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:orientation="vertical">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="16dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -19,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1">
 
-                <include layout="@layout/layout_simple_physical_item" />
+                <include layout="@layout/layout_credit_card" />
             </ua.com.radiokot.physicalitemlayout.PhysicalItemLayout>
 
             <Space
@@ -27,6 +33,10 @@
                 android:layout_height="0dp"
                 android:layout_weight="4" />
         </LinearLayout>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="16dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -38,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2">
 
-                <include layout="@layout/layout_simple_physical_item" />
+                <include layout="@layout/layout_credit_card" />
             </ua.com.radiokot.physicalitemlayout.PhysicalItemLayout>
 
             <Space
@@ -46,6 +56,10 @@
                 android:layout_height="0dp"
                 android:layout_weight="4" />
         </LinearLayout>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="16dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="3">
 
-                <include layout="@layout/layout_simple_physical_item" />
+                <include layout="@layout/layout_credit_card" />
             </ua.com.radiokot.physicalitemlayout.PhysicalItemLayout>
 
             <Space
@@ -65,6 +79,10 @@
                 android:layout_height="0dp"
                 android:layout_weight="4" />
         </LinearLayout>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="16dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -76,7 +94,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="4">
 
-                <include layout="@layout/layout_simple_physical_item" />
+                <include layout="@layout/layout_credit_card" />
             </ua.com.radiokot.physicalitemlayout.PhysicalItemLayout>
 
             <Space
@@ -84,6 +102,10 @@
                 android:layout_height="0dp"
                 android:layout_weight="4" />
         </LinearLayout>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="16dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -95,7 +117,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="4">
 
-                <include layout="@layout/layout_simple_physical_item" />
+                <include layout="@layout/layout_credit_card" />
             </ua.com.radiokot.physicalitemlayout.PhysicalItemLayout>
 
             <Space
@@ -104,6 +126,10 @@
                 android:layout_weight="3" />
         </LinearLayout>
 
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="16dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -114,7 +140,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="4">
 
-                <include layout="@layout/layout_simple_physical_item" />
+                <include layout="@layout/layout_credit_card" />
             </ua.com.radiokot.physicalitemlayout.PhysicalItemLayout>
 
             <Space
@@ -123,6 +149,10 @@
                 android:layout_weight="2" />
         </LinearLayout>
 
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="16dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -133,7 +163,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="4">
 
-                <include layout="@layout/layout_simple_physical_item" />
+                <include layout="@layout/layout_credit_card" />
             </ua.com.radiokot.physicalitemlayout.PhysicalItemLayout>
 
             <Space
@@ -142,6 +172,10 @@
                 android:layout_weight="1" />
         </LinearLayout>
 
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="16dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -152,7 +186,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="4">
 
-                <include layout="@layout/layout_simple_physical_item" />
+                <include layout="@layout/layout_credit_card" />
             </ua.com.radiokot.physicalitemlayout.PhysicalItemLayout>
 
             <Space
@@ -160,6 +194,11 @@
                 android:layout_height="0dp"
                 android:layout_weight="0" />
         </LinearLayout>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="16dp" />
+
     </LinearLayout>
 
 </ScrollView>

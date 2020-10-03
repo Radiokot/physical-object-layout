@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="900px"
+    android:layout_height="568px"
+    app:cardBackgroundColor="#224F49"
+    app:cardCornerRadius="40px"
+    tools:ignore="PxUsage,RtlHardcoded,HardcodedText,MissingPrefix">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="410px"
+            android:layout_height="560px"
+            android:layout_marginLeft="280px"
+            android:layout_marginTop="180px"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/credit_card_logo" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="180px"
+            android:layout_height="200px"
+            android:layout_marginLeft="300px"
+            android:layout_marginTop="200px"
+            android:alpha="0.7"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/credit_card_logo_secondary" />
+
+        <TextView
+            fontPath="fonts/cardname.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70px"
+            android:layout_marginTop="55px"
+            android:text="Green Bank"
+            android:textColor="#ffffff"
+            android:textSize="65px" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="115px"
+            android:layout_height="85px"
+            android:layout_marginLeft="70px"
+            android:layout_marginTop="180px"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/credit_card_chip"
+            app:tint="#3A736B" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="45px"
+            android:layout_height="85px"
+            android:layout_gravity="right"
+            android:layout_marginTop="180px"
+            android:layout_marginRight="70px"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/credit_card_paypass"
+            app:tint="#53968D" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="115px"
+            android:layout_height="70px"
+            android:layout_gravity="end|bottom"
+            android:layout_marginRight="70px"
+            android:layout_marginBottom="70px"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/mastercard_circles_outline"
+            app:tint="#579C93" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="195px">
+
+            <TextView
+                style="@style/CreditCardNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="65px"
+                android:text="4442" />
+
+            <TextView
+                style="@style/CreditCardNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="270px"
+                android:text="3418" />
+
+            <TextView
+                style="@style/CreditCardNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="475px"
+                android:text="3425" />
+
+            <TextView
+                style="@style/CreditCardNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="680px"
+                android:text="8879" />
+
+        </FrameLayout>
+
+        <TextView
+            fontPath="fonts/cardnumber.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="65px"
+            android:layout_marginBottom="80px"
+            android:text="09/24"
+            android:textColor="#50968D" />
+    </FrameLayout>
+</androidx.cardview.widget.CardView>

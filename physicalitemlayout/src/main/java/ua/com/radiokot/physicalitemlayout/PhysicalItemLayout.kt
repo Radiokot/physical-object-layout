@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import ua.com.radiokot.physicalitemlayout.util.forEachChild
 import kotlin.math.roundToInt
 
@@ -113,9 +114,12 @@ open class PhysicalItemLayout
         when (view) {
             is TextView ->
                 view.setTextSize(TypedValue.COMPLEX_UNIT_PX, view.textSize * scaleFactor.toFloat())
-            is ViewGroup -> {
-                view.forEachChild { scaleChildView(it, scaleFactor) }
-            }
+            is CardView ->
+                view.radius *= scaleFactor.toFloat()
+        }
+
+        if (view is ViewGroup) {
+            view.forEachChild { scaleChildView(it, scaleFactor) }
         }
     }
 }
