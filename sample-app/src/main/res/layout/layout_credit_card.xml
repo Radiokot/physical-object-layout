@@ -6,6 +6,10 @@
     android:layout_height="568px"
     app:cardBackgroundColor="#224F49"
     app:cardCornerRadius="40px"
+    app:cardElevation="0dp"
+    app:cardMaxElevation="0dp"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="false"
     tools:ignore="PxUsage,RtlHardcoded,HardcodedText,MissingPrefix">
 
     <FrameLayout
