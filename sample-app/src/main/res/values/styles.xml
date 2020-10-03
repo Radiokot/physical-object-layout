@@ -10,9 +10,8 @@
 
     <style name="CreditCardNumber">
         <item name="fontPath">fonts/cardnumber.ttf</item>
-        <item name="android:letterSpacing" tools:targetApi="lollipop">0.2</item>
         <item name="android:textColor">#FFDA64</item>
         <item name="android:fontFamily" tools:targetApi="jelly_bean">monospace</item>
-        <item name="android:textSize" tools:ignore="PxUsage">50px</item>
+        <item name="android:textSize" tools:ignore="PxUsage">55px</item>
     </style>
 </resources>
