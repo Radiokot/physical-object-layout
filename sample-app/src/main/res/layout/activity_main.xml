@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    tools:context=".MainActivity"
+    tools:ignore="HardcodedText"
+    android:gravity="center_vertical">
 
-    <TextView
+    <Button
+        android:id="@+id/scale_by_width_button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:gravity="center"
-        android:text="@string/app_name" />
+        android:layout_height="72dp"
+        android:text="Scale by width" />
 
-</FrameLayout>
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="24dp" />
+
+    <Button
+        android:id="@+id/scale_by_height_button"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:text="Scale by height" />
+
+</LinearLayout>
