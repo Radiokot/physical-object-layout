@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="600px"
+    android:layout_height="950px"
+    app:cardBackgroundColor="#d2e0eb"
+    app:cardCornerRadius="40px"
+    app:cardElevation="10px"
+    app:cardMaxElevation="10px"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true"
+    tools:ignore="PxUsage">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="200px"
+            android:layout_height="35px"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30px"
+            app:cardBackgroundColor="#ffffff"
+            app:cardCornerRadius="15px"
+            app:cardElevation="0px"
+            app:cardMaxElevation="0px" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="80px"
+            android:layout_marginTop="100px"
+            android:background="#218cc4"
+            android:gravity="center"
+            android:text="Main Office"
+            android:textAllCaps="true"
+            android:textColor="#ffffff"
+            android:textSize="30px" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="400px"
+            android:gravity="center"
+            android:text="Robert Sapolsky"
+            android:textSize="50px"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="470px"
+            android:gravity="center"
+            android:text="Person Name"
+            android:textColor="#989898"
+            android:textSize="25px" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="210px"
+            android:layout_gravity="bottom"
+            android:background="#1f8a56"
+            android:gravity="center"
+            android:text="Pass"
+            android:textAllCaps="true"
+            android:textColor="#ffffff"
+            android:textSize="120px"
+            android:textStyle="bold" />
+    </FrameLayout>
+</androidx.cardview.widget.CardView>

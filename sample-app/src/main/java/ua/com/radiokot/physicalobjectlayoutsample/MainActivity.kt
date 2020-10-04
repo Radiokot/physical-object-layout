@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         }
 
         scale_by_height_button.setOnClickListener {
+            startActivity(Intent(this, ScaleByHeightActivity::class.java))
         }
     }
 }

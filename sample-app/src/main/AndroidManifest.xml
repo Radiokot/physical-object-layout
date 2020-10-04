@@ -21,6 +21,10 @@
         <activity
             android:name=".ScaleByWidthActivity"
             android:label="Scale by Width" />
+
+        <activity
+            android:name=".ScaleByHeightActivity"
+            android:label="Scale by Height" />
     </application>
 
 </manifest>
