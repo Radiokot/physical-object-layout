@@ -1,4 +1,4 @@
-package ua.com.radiokot.physicalitemlayout.util
+package ua.com.radiokot.physicalobjectlayout.util
 
 import android.view.View
 import android.view.ViewGroup

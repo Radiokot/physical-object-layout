@@ -1,17 +1,17 @@
-package ua.com.radiokot.physicalitemlayout
+package ua.com.radiokot.physicalobjectlayout
 
 import android.content.Context
 import android.util.AttributeSet
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
-import ua.com.radiokot.physicalitemlayout.scaler.CardViewScalingStrategy
-import ua.com.radiokot.physicalitemlayout.scaler.GeneralViewScalingStrategy
-import ua.com.radiokot.physicalitemlayout.scaler.TextViewScalingStrategy
-import ua.com.radiokot.physicalitemlayout.scaler.ViewScalingStrategy
-import ua.com.radiokot.physicalitemlayout.util.forEachChild
+import ua.com.radiokot.physicalobjectlayout.scalingstrategy.CardViewScalingStrategy
+import ua.com.radiokot.physicalobjectlayout.scalingstrategy.GeneralViewScalingStrategy
+import ua.com.radiokot.physicalobjectlayout.scalingstrategy.TextViewScalingStrategy
+import ua.com.radiokot.physicalobjectlayout.scalingstrategy.ViewScalingStrategy
+import ua.com.radiokot.physicalobjectlayout.util.forEachChild
 
-open class PhysicalItemLayout
+open class PhysicalObjectLayout
 @JvmOverloads constructor(
         context: Context,
         attrs: AttributeSet? = null,
@@ -55,16 +55,16 @@ open class PhysicalItemLayout
     init {
         context.theme.obtainStyledAttributes(
                 attrs,
-                R.styleable.PhysicalItemLayout,
+                R.styleable.PhysicalObjectLayout,
                 defStyleAttr,
                 0
         ).apply {
-            scaleBy = getInteger(R.styleable.PhysicalItemLayout_pil_scaleBy, scaleBy.ordinal)
+            scaleBy = getInteger(R.styleable.PhysicalObjectLayout_pol_scaleBy, scaleBy.ordinal)
                     .let(ScaleDimension.values()::get)
             addChildrenInvisible =
-                    getBoolean(R.styleable.PhysicalItemLayout_pil_addChildrenInvisible, true)
+                    getBoolean(R.styleable.PhysicalObjectLayout_pol_addChildrenInvisible, true)
             makeChildrenVisibleAfterScale =
-                    getBoolean(R.styleable.PhysicalItemLayout_pil_makeChildrenVisibleAfterScale, true)
+                    getBoolean(R.styleable.PhysicalObjectLayout_pol_makeChildrenVisibleAfterScale, true)
         }
 
         initDefaultScalingStrategies()

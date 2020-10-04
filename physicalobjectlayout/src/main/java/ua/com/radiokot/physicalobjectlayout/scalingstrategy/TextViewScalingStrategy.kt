@@ -1,4 +1,4 @@
-package ua.com.radiokot.physicalitemlayout.scaler
+package ua.com.radiokot.physicalobjectlayout.scalingstrategy
 
 import android.util.TypedValue
 import android.view.View

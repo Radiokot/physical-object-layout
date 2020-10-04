@@ -1,21 +1,19 @@
-package ua.com.radiokot.physicalitemlayoutsample
+package ua.com.radiokot.physicalobjectlayoutsample
 
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.Space
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.forEach
 import androidx.core.view.get
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 import kotlinx.android.synthetic.main.activity_scale_by_width.*
 import kotlinx.android.synthetic.main.layout_credit_card.view.*
-import ua.com.radiokot.physicalitemlayout.PhysicalItemLayout
-import ua.com.radiokot.physicalitemlayoutsample.util.dp
+import ua.com.radiokot.physicalobjectlayout.PhysicalObjectLayout
+import ua.com.radiokot.physicalobjectlayoutsample.util.dp
 import kotlin.random.Random
 
 class ScaleByWidthActivity : AppCompatActivity(R.layout.activity_scale_by_width) {
@@ -40,8 +38,8 @@ class ScaleByWidthActivity : AppCompatActivity(R.layout.activity_scale_by_width)
                 orientation = LinearLayout.HORIZONTAL
             }
 
-            val physicalItemLayout = PhysicalItemLayout(this).apply {
-                scaleBy = PhysicalItemLayout.ScaleDimension.WIDTH
+            val physicalObjectLayout = PhysicalObjectLayout(this).apply {
+                scaleBy = PhysicalObjectLayout.ScaleDimension.WIDTH
 
                 val creditCard =
                         layoutInflater.inflate(R.layout.layout_credit_card, this, false)
@@ -55,7 +53,7 @@ class ScaleByWidthActivity : AppCompatActivity(R.layout.activity_scale_by_width)
                 addView(creditCard)
             }
 
-            row.addView(physicalItemLayout, LinearLayout.LayoutParams(
+            row.addView(physicalObjectLayout, LinearLayout.LayoutParams(
                     0, LinearLayout.LayoutParams.WRAP_CONTENT, weight.toFloat()
             ))
             row.addView(Space(this), LinearLayout.LayoutParams(

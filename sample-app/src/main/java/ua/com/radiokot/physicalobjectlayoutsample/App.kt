@@ -1,4 +1,4 @@
-package ua.com.radiokot.physicalitemlayoutsample
+package ua.com.radiokot.physicalobjectlayoutsample
 
 import android.app.Application
 import io.github.inflationx.calligraphy3.CalligraphyConfig

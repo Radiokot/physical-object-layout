@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ua.com.radiokot.physicalitemlayoutsample">
+    package="ua.com.radiokot.physicalobjectlayoutsample">
 
     <application
         android:name=".App"

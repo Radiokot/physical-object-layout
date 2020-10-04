@@ -1,4 +1,4 @@
-package ua.com.radiokot.physicalitemlayoutsample.util
+package ua.com.radiokot.physicalobjectlayoutsample.util
 
 import android.content.res.Resources
 

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="PhysicalItemLayout">
+    <declare-styleable name="PhysicalObjectLayout">
 
         <!-- Specifies a dimension that children will be scaled to fit to.
              Default value is "width"-->
-        <attr name="pil_scaleBy" format="enum">
+        <attr name="pol_scaleBy" format="enum">
             <enum name="width" value="0" />
             <enum name="height" value="1" />
         </attr>
@@ -12,12 +12,12 @@
         <!-- If enabled the layout will set it's children visibility
              to "View.INVISIBLE" on add.
              Enabled by default -->
-        <attr name="pil_addChildrenInvisible" format="boolean" />
+        <attr name="pol_addChildrenInvisible" format="boolean" />
 
         <!-- If enabled the layout will set it's children visibility
              to "View.VISIBLE" once they are scaled.
              Enabled by default -->
-        <attr name="pil_makeChildrenVisibleAfterScale" format="boolean" />
+        <attr name="pol_makeChildrenVisibleAfterScale" format="boolean" />
 
     </declare-styleable>
 </resources>
