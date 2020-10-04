@@ -24,6 +24,8 @@ open class PhysicalItemLayout
     }
 
     protected var scaleBy: ScaleBy
+    protected var addChildrenInvisible: Boolean
+    protected var makeChildrenVisibleAfterScale: Boolean
 
     init {
         context.theme.obtainStyledAttributes(
@@ -34,6 +36,10 @@ open class PhysicalItemLayout
         ).apply {
             scaleBy = getInteger(R.styleable.PhysicalItemLayout_pil_scaleBy, 0)
                     .let(ScaleBy.values()::get)
+            addChildrenInvisible =
+                    getBoolean(R.styleable.PhysicalItemLayout_pil_addChildrenInvisible, true)
+            makeChildrenVisibleAfterScale =
+                    getBoolean(R.styleable.PhysicalItemLayout_pil_makeChildrenVisibleAfterScale, true)
         }
 
         initLayoutChangeListener()
@@ -128,6 +134,18 @@ open class PhysicalItemLayout
 
         if (view is ViewGroup) {
             view.forEachChild { scaleChildView(it, scaleFactor) }
+        }
+
+        if (makeChildrenVisibleAfterScale) {
+            view.visibility = View.VISIBLE
+        }
+    }
+
+    override fun addView(child: View, index: Int, params: ViewGroup.LayoutParams?) {
+        super.addView(child, index, params)
+
+        if (addChildrenInvisible) {
+            child.visibility = View.INVISIBLE
         }
     }
 }
