@@ -17,13 +17,13 @@ open class PhysicalItemLayout
         attrs: AttributeSet? = null,
         defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr) {
-    public enum class ScaleBy {
+    public enum class ScaleDimension {
         WIDTH,
         HEIGHT,
         ;
     }
 
-    protected var scaleBy: ScaleBy
+    protected var scaleBy: ScaleDimension
     protected var addChildrenInvisible: Boolean
     protected var makeChildrenVisibleAfterScale: Boolean
 
@@ -35,7 +35,7 @@ open class PhysicalItemLayout
                 0
         ).apply {
             scaleBy = getInteger(R.styleable.PhysicalItemLayout_pil_scaleBy, 0)
-                    .let(ScaleBy.values()::get)
+                    .let(ScaleDimension.values()::get)
             addChildrenInvisible =
                     getBoolean(R.styleable.PhysicalItemLayout_pil_addChildrenInvisible, true)
             makeChildrenVisibleAfterScale =
@@ -68,14 +68,14 @@ open class PhysicalItemLayout
                                      currentHeight: Int) {
         forEachChild { child ->
             val scaleFactor = when (scaleBy) {
-                ScaleBy.WIDTH -> {
+                ScaleDimension.WIDTH -> {
                     val childWidth = child.width
                     if (childWidth == 0 || currentWidth == 0) {
                         return@forEachChild
                     }
                     currentWidth.toDouble() / childWidth
                 }
-                ScaleBy.HEIGHT -> {
+                ScaleDimension.HEIGHT -> {
                     val childHeight = child.height
                     if (childHeight == 0 || currentHeight == 0) {
                         return@forEachChild
