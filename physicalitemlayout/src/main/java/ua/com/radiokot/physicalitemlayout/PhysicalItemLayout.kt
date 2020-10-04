@@ -26,7 +26,15 @@ open class PhysicalItemLayout
     protected var scaleBy: ScaleBy
 
     init {
-        scaleBy = ScaleBy.WIDTH
+        context.theme.obtainStyledAttributes(
+                attrs,
+                R.styleable.PhysicalItemLayout,
+                defStyleAttr,
+                0
+        ).apply {
+            scaleBy = getInteger(R.styleable.PhysicalItemLayout_pil_scaleBy, 0)
+                    .let(ScaleBy.values()::get)
+        }
 
         initLayoutChangeListener()
     }

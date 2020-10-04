@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PhysicalItemLayout">
+        <!-- Specifies a dimension that children will be scaled to fit to.
+             Default value is "width"-->
+        <attr name="pil_scaleBy" format="enum">
+            <enum name="width" value="0"/>
+            <enum name="height" value="1"/>
+        </attr>
+    </declare-styleable>
+</resources>
