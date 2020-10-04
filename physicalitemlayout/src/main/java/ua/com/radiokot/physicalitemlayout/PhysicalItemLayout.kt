@@ -2,14 +2,14 @@ package ua.com.radiokot.physicalitemlayout
 
 import android.content.Context
 import android.util.AttributeSet
-import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
-import android.widget.TextView
-import androidx.cardview.widget.CardView
+import ua.com.radiokot.physicalitemlayout.scaler.CardViewScalingStrategy
+import ua.com.radiokot.physicalitemlayout.scaler.GeneralViewScalingStrategy
+import ua.com.radiokot.physicalitemlayout.scaler.TextViewScalingStrategy
+import ua.com.radiokot.physicalitemlayout.scaler.ViewScalingStrategy
 import ua.com.radiokot.physicalitemlayout.util.forEachChild
-import kotlin.math.roundToInt
 
 open class PhysicalItemLayout
 @JvmOverloads constructor(
@@ -49,6 +49,9 @@ open class PhysicalItemLayout
      */
     var makeChildrenVisibleAfterScale: Boolean
 
+    protected val mScalingStrategies: MutableList<ViewScalingStrategy> = mutableListOf()
+    val scalingStrategies: List<ViewScalingStrategy> = mScalingStrategies
+
     init {
         context.theme.obtainStyledAttributes(
                 attrs,
@@ -64,7 +67,16 @@ open class PhysicalItemLayout
                     getBoolean(R.styleable.PhysicalItemLayout_pil_makeChildrenVisibleAfterScale, true)
         }
 
+        initDefaultScalingStrategies()
         initLayoutChangeListener()
+    }
+
+    private fun initDefaultScalingStrategies() {
+        addScalingStrategies(
+                GeneralViewScalingStrategy,
+                TextViewScalingStrategy,
+                CardViewScalingStrategy
+        )
     }
 
     private fun initLayoutChangeListener() {
@@ -112,46 +124,8 @@ open class PhysicalItemLayout
 
     protected open fun scaleChildView(view: View,
                                       scaleFactor: Double) {
-        var changesOccurred = false
-        view.layoutParams.apply {
-            if (width > 0) {
-                width = (width * scaleFactor).roundToInt()
-                changesOccurred = true
-            }
-            if (height > 0) {
-                height = (height * scaleFactor).roundToInt()
-                changesOccurred = true
-            }
-
-            if (this is MarginLayoutParams) {
-                if (leftMargin > 0) {
-                    leftMargin = (leftMargin * scaleFactor).roundToInt()
-                    changesOccurred = true
-                }
-                if (rightMargin > 0) {
-                    rightMargin = (rightMargin * scaleFactor).roundToInt()
-                    changesOccurred = true
-                }
-                if (topMargin > 0) {
-                    topMargin = (topMargin * scaleFactor).roundToInt()
-                    changesOccurred = true
-                }
-                if (bottomMargin > 0) {
-                    bottomMargin = (bottomMargin * scaleFactor).roundToInt()
-                    changesOccurred = true
-                }
-            }
-        }
-
-        if (changesOccurred) {
-            view.invalidate()
-        }
-
-        when (view) {
-            is TextView ->
-                view.setTextSize(TypedValue.COMPLEX_UNIT_PX, view.textSize * scaleFactor.toFloat())
-            is CardView ->
-                view.radius *= scaleFactor.toFloat()
+        scalingStrategies.forEach { scaler ->
+            scaler.scaleView(view, scaleFactor)
         }
 
         if (view is ViewGroup) {
@@ -161,6 +135,25 @@ open class PhysicalItemLayout
         if (makeChildrenVisibleAfterScale) {
             view.visibility = View.VISIBLE
         }
+    }
+
+    fun addScalingStrategies(vararg scalingStrategies: ViewScalingStrategy) {
+        mScalingStrategies.addAll(scalingStrategies)
+        if (childCount > 0) {
+            requestLayout()
+        }
+    }
+
+    fun addScalingStrategy(scalingStrategy: (view: View, scaleFactor: Double) -> Unit): ViewScalingStrategy {
+        return object : ViewScalingStrategy {
+            override fun scaleView(view: View, scaleFactor: Double) {
+                scalingStrategy(view, scaleFactor)
+            }
+        }.also { addScalingStrategies(it) }
+    }
+
+    fun removeScalingStrategy(scalingStrategy: ViewScalingStrategy) {
+        mScalingStrategies.remove(scalingStrategy)
     }
 
     override fun addView(child: View, index: Int, params: ViewGroup.LayoutParams?) {
