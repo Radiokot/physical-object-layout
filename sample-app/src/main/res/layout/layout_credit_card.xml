@@ -73,6 +73,7 @@
             app:tint="#579C93" />
 
         <FrameLayout
+            android:id="@+id/card_number_groups_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"

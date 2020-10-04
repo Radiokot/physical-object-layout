@@ -7,11 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.Space
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.forEach
+import androidx.core.view.get
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 import kotlinx.android.synthetic.main.activity_scale_by_width.*
+import kotlinx.android.synthetic.main.layout_credit_card.view.*
 import ua.com.radiokot.physicalitemlayout.PhysicalItemLayout
 import ua.com.radiokot.physicalitemlayoutsample.util.dp
+import kotlin.random.Random
 
 class ScaleByWidthActivity : AppCompatActivity(R.layout.activity_scale_by_width) {
     override fun attachBaseContext(newBase: Context) {
@@ -37,7 +42,17 @@ class ScaleByWidthActivity : AppCompatActivity(R.layout.activity_scale_by_width)
 
             val physicalItemLayout = PhysicalItemLayout(this).apply {
                 scaleBy = PhysicalItemLayout.ScaleDimension.WIDTH
-                layoutInflater.inflate(R.layout.layout_credit_card, this, true)
+
+                val creditCard =
+                        layoutInflater.inflate(R.layout.layout_credit_card, this, false)
+                creditCard.setOnClickListener {
+                    for (i in 0..3) {
+                        (creditCard.card_number_groups_layout[i] as TextView).text =
+                                Random.nextInt(1111, 9999).toString()
+                    }
+                }
+
+                addView(creditCard)
             }
 
             row.addView(physicalItemLayout, LinearLayout.LayoutParams(
