@@ -65,6 +65,8 @@ open class PhysicalObjectLayout
                     getBoolean(R.styleable.PhysicalObjectLayout_pol_addChildrenInvisible, true)
             makeChildrenVisibleAfterScale =
                     getBoolean(R.styleable.PhysicalObjectLayout_pol_makeChildrenVisibleAfterScale, true)
+
+            recycle()
         }
 
         initDefaultScalingStrategies()
