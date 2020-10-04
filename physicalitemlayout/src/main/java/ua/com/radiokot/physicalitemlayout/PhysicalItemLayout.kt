@@ -17,15 +17,37 @@ open class PhysicalItemLayout
         attrs: AttributeSet? = null,
         defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr) {
-    public enum class ScaleDimension {
+    enum class ScaleDimension {
         WIDTH,
         HEIGHT,
         ;
     }
 
-    protected var scaleBy: ScaleDimension
-    protected var addChildrenInvisible: Boolean
-    protected var makeChildrenVisibleAfterScale: Boolean
+    /**
+     *  Specifies a dimension that children will be scaled to fit to.
+     *  Default is [ScaleDimension.WIDTH]
+     */
+    var scaleBy: ScaleDimension = ScaleDimension.WIDTH
+        set(value) {
+            val isChanged = field != value
+            field = value
+            if (isChanged && childCount > 0) {
+                requestLayout()
+            }
+        }
+
+    /**
+     * If enabled the layout will set it's children visibility to [View.INVISIBLE] on add.
+     * Enabled by default
+     */
+    var addChildrenInvisible: Boolean
+
+    /**
+     * If enabled the layout will set it's children visibility to [View.VISIBLE]
+     * once they are scaled.
+     * Enabled by default
+     */
+    var makeChildrenVisibleAfterScale: Boolean
 
     init {
         context.theme.obtainStyledAttributes(
@@ -34,7 +56,7 @@ open class PhysicalItemLayout
                 defStyleAttr,
                 0
         ).apply {
-            scaleBy = getInteger(R.styleable.PhysicalItemLayout_pil_scaleBy, 0)
+            scaleBy = getInteger(R.styleable.PhysicalItemLayout_pil_scaleBy, scaleBy.ordinal)
                     .let(ScaleDimension.values()::get)
             addChildrenInvisible =
                     getBoolean(R.styleable.PhysicalItemLayout_pil_addChildrenInvisible, true)
