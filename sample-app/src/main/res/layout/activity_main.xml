@@ -26,4 +26,13 @@
         android:layout_height="72dp"
         android:text="Scale by height" />
 
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="24dp" />
+
+    <Button
+        android:id="@+id/scale_custom_view_button"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:text="Scale custom view" />
 </LinearLayout>

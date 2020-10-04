@@ -20,5 +20,9 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         scale_by_height_button.setOnClickListener {
             startActivity(Intent(this, ScaleByHeightActivity::class.java))
         }
+
+        scale_custom_view_button.setOnClickListener {
+            startActivity(Intent(this, ScaleCustomViewActivity::class.java))
+        }
     }
 }

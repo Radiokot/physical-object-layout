@@ -25,6 +25,10 @@
         <activity
             android:name=".ScaleByHeightActivity"
             android:label="Scale by Height" />
+
+        <activity
+            android:name=".ScaleCustomViewActivity"
+            android:label="Scale custom view" />
     </application>
 
 </manifest>
