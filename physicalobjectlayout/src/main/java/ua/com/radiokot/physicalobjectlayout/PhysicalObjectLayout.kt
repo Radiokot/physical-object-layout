@@ -11,6 +11,22 @@ import ua.com.radiokot.physicalobjectlayout.scalingstrategy.TextViewScalingStrat
 import ua.com.radiokot.physicalobjectlayout.scalingstrategy.ViewScalingStrategy
 import ua.com.radiokot.physicalobjectlayout.util.forEachChild
 
+/**
+ * A layout that properly scales it's children representing physical world objects.
+ *
+ * [Example image](https://user-images.githubusercontent.com/5675681/95360658-5bbaf480-08d4-11eb-92ec-4bbc6debda14.png)
+ *
+ * To achieve proper scaling you must create your layout with all sizes and margins
+ * fixed and set in px. Without any tricky layouts, without dimens,
+ * literally a copy of what the designers sent to you.
+ *
+ * [Example app](https://github.com/Radiokot/android-physical-object-layout/tree/master/sample-app)
+ *
+ * @see PhysicalObjectLayout.scaleBy
+ * @see ViewScalingStrategy
+ *
+ * @author [Oleg Koretsky](https://radiokot.com.ua)
+ */
 open class PhysicalObjectLayout
 @JvmOverloads constructor(
         context: Context,
