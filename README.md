@@ -1,5 +1,8 @@
 # PhysicalObjectLayout
 
+[![Latest release](https://jitpack.io/v/radiokot/physical-object-layout.svg)](https://jitpack.io/#radiokot/physical-object-layout)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 An Android layout that properly scales it's content in order to display physical objects such as credit cards, passports, etc.
 
 ![Example](https://user-images.githubusercontent.com/5675681/95358306-95d6c700-08d1-11eb-8c2a-1493baa0bfc7.jpg)
