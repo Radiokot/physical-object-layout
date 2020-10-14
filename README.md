@@ -4,6 +4,24 @@ An Android layout that properly scales it's content in order to display physical
 
 ![Example](https://user-images.githubusercontent.com/5675681/95358306-95d6c700-08d1-11eb-8c2a-1493baa0bfc7.jpg)
 
+## Dependency
+Ensure that you have JitPack repo added to your project `build.gradle` file:
+
+```gradle
+allprojects {
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
+	}
+}
+```
+Add the library to your app `build.gradle` file:
+
+```gradle
+dependencies {
+	implementation 'com.github.radiokot:android-physical-object-layout:-SNAPSHOT'
+}
+```
 ## What problem does it solve?
 
 If you have ever tried to design and display a representation of physical world object, i.e. a credit card, 
@@ -33,6 +51,51 @@ Without any tricky layouts, without `dimens`, literally a copy of what the desig
 
 ![Example](https://user-images.githubusercontent.com/5675681/95360658-5bbaf480-08d4-11eb-92ec-4bbc6debda14.png)
 
-Describe attributes
-Describe custom view scaling
-Give Maven URL
+## Layout attributes
+`PhysicalObjectLayout` has a few attributes that controls scaling and appearance:
+
+| Name | Description | Default |
+|------|-------------|---------|
+| `pol_scaleBy` | Specifies a dimension that children will be scaled to fit to | `width` |
+| `pol_addChildrenInvisible` | If enabled the layout will set it's children visibility to `View.INVISIBLE` on add. As soon as the scaling is not instant it is recommended to keep this attribute enabled in order to avoid unscaled child blink | `true` |
+| `pol_makeChildrenVisibleAfterScale` | If enabled the layout will set it's children visibility to `View.VISIBLE` once they are scaled. Recommended to use in a combination with the previous attribute  | `true` |
+
+## Scaling custom views
+
+`PhysicalObjectLayout` allows you to specify custom scaling strategies in order to scale custom views. 
+
+You can implement your own `ViewScalingStrategy` and apply it programmatically using `addScalingStrategies`
+or `addScalingStrategy` methods.
+
+Examples of custom scaling strategies can be found in the library itself:
+[CardViewScalingStrategy](physicalobjectlayout/src/main/java/ua/com/radiokot/physicalobjectlayout/scalingstrategy/CardViewScalingStrategy.kt),
+[TextViewScalingStrategy](physicalobjectlayout/src/main/java/ua/com/radiokot/physicalobjectlayout/scalingstrategy/TextViewScalingStrategy.kt)
+
+## License
+
+### The MIT License
+
+```
+Copyright (c) 2020 Oleg Koretsky
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the “Software”), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+```
