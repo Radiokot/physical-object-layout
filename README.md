@@ -22,7 +22,7 @@ Add the library to your app `build.gradle` file:
 
 ```gradle
 dependencies {
-	implementation 'com.github.radiokot:android-physical-object-layout:-SNAPSHOT'
+	implementation 'com.github.radiokot:physical-object-layout:1.0.0'
 }
 ```
 ## What problem does it solve?
