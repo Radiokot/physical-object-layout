@@ -3,7 +3,7 @@
 [![Latest release](https://jitpack.io/v/radiokot/physical-object-layout.svg)](https://jitpack.io/#radiokot/physical-object-layout)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-An Android layout that properly scales it's content in order to display physical objects such as credit cards, passports, etc.
+An Android layout that properly scales its content in order to display physical objects such as credit cards, passports, etc.
 
 ![Example](https://user-images.githubusercontent.com/5675681/95358306-95d6c700-08d1-11eb-8c2a-1493baa0bfc7.jpg)
 
@@ -62,8 +62,8 @@ Without any tricky layouts, without `dimens`, literally a copy of what the desig
 | Name | Description | Default |
 |------|-------------|---------|
 | `pol_scaleBy` | Specifies a dimension that children will be scaled to fit to | `width` |
-| `pol_addChildrenInvisible` | If enabled the layout will set it's children visibility to `View.INVISIBLE` on add. As soon as the scaling is not instant it is recommended to keep this attribute enabled in order to avoid unscaled child blink | `true` |
-| `pol_makeChildrenVisibleAfterScale` | If enabled the layout will set it's children visibility to `View.VISIBLE` once they are scaled. Recommended to use in a combination with the previous attribute  | `true` |
+| `pol_addChildrenInvisible` | If enabled the layout will set its children visibility to `View.INVISIBLE` on add. As soon as the scaling is not instant it is recommended to keep this attribute enabled in order to avoid unscaled child blink | `true` |
+| `pol_makeChildrenVisibleAfterScale` | If enabled the layout will set its children visibility to `View.VISIBLE` once they are scaled. Recommended to use in a combination with the previous attribute  | `true` |
 
 ## Scaling custom views
 
