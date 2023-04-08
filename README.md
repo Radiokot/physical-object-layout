@@ -7,7 +7,7 @@ An Android layout that properly scales its content in order to display physical 
 
 ![Example](https://user-images.githubusercontent.com/5675681/95358306-95d6c700-08d1-11eb-8c2a-1493baa0bfc7.jpg)
 
-[Donwload Sample App APK](https://github.com/Radiokot/physical-object-layout/releases/download/1.0.0/physical-object-layout-sample.apk)
+[Download Sample App APK](https://github.com/Radiokot/physical-object-layout/releases/download/1.0.0/physical-object-layout-sample.apk)
 
 ## Dependency
 Ensure that you have JitPack repo added to your project `build.gradle` file:
