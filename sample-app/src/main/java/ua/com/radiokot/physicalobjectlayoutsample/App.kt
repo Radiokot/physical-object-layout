@@ -15,7 +15,7 @@ class App: Application() {
         ViewPump.init(ViewPump.builder()
                 .addInterceptor(
                         CalligraphyInterceptor(CalligraphyConfig.Builder()
-                                .setFontAttrId(R.attr.fontPath)
+                                .setFontAttrId(io.github.inflationx.calligraphy3.R.attr.fontPath)
                                 .build())
                 )
                 .build())

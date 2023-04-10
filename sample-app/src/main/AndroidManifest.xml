@@ -11,7 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -20,14 +22,17 @@
 
         <activity
             android:name=".ScaleByWidthActivity"
+            android:exported="false"
             android:label="Scale by Width" />
 
         <activity
             android:name=".ScaleByHeightActivity"
+            android:exported="false"
             android:label="Scale by Height" />
 
         <activity
             android:name=".ScaleCustomViewActivity"
+            android:exported="false"
             android:label="Scale custom view" />
     </application>
 
