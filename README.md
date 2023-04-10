@@ -24,7 +24,7 @@ Add the library to your app `build.gradle` file:
 
 ```gradle
 dependencies {
-	implementation 'com.github.radiokot:physical-object-layout:1.0.0'
+	implementation 'com.github.radiokot:physical-object-layout:1.0.1'
 }
 ```
 ## What problem does it solve?
